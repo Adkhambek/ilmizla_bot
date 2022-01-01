@@ -1,0 +1,23 @@
+{
+    "name": "ilmizla_bot",
+    "version": "1.0.0",
+    "description": "ilmizla (http://bit.ly/ilmizla_uz) YouTube kanali uchun yaratilgan maxsus Telegram BOT",
+    "main": "index.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=production node index.js",
+        "dev": "nodemon index.js"
+    },
+    "keywords": [],
+    "author": "Adham Muzaffarov",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.2",
+        "pg": "^8.7.1",
+        "telegraf": "^4.5.2"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.15"
+    }
+}
