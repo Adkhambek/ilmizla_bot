@@ -20,7 +20,7 @@ CREATE TABLE users (
 );
 CREATE TABLE admins (
     chat_id int
-)
+);
 CREATE TABLE playlists (
     id serial primary key,
     name varchar(100),
