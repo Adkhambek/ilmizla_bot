@@ -8,4 +8,5 @@ module.exports = {
         baseUrl: process.env.BASE_URL,
         secretPath: process.env.SECRET_PATH,
     },
+    admins: [Number(process.env.ADMIN_1)],
 };

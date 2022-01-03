@@ -1,11 +1,20 @@
 const { fetch, fetchAll } = require("../database/connect");
 
 const orm = {
-    selectAll: function (table) {
+    selectAll: function (table, columns = []) {
         const sql = `
-        SELECT * FROM ${table};
+        SELECT ${columns.length ? columns.join(", ") : "*"} 
+        FROM ${table};
         `;
         return fetchAll(sql);
+    },
+    selectOne: function (table, condition, columns = []) {
+        const sql = `
+        SELECT ${columns.length ? columns.join(", ") : "*"}
+        FROM ${table}
+        WHERE ${condition}
+        `;
+        return fetch(sql);
     },
     insertOne: function (table, data, returningColumn) {
         const columns = Object.keys(data);
