@@ -1,29 +1,21 @@
-const { Telegraf } = require("telegraf");
+const { Telegraf, Markup } = require("telegraf");
 const express = require("express");
-const { TOKEN, production } = require("./config");
+const { TOKEN, production } = require("./configs/keys");
+const { menuBtns } = require("./configs/keyboards");
+const { menu } = require("./configs/texts");
 const bot = new Telegraf(TOKEN);
 const orm = require("./utils/orm");
 
-bot.start((ctx) => ctx.reply("Hello World"));
-
-(async function () {
-    // const newUser = await orm.insertOne(
-    //     "admins",
-    //     {
-    //         chat_id: 560729439,
-    //     },
-    //     "chat_id"
-    // );
-    // console.log(newUser);
-    await orm.updateOne(
-        "admins",
+bot.start(async (ctx) => {
+    ctx.replyWithPhoto(
+        { source: "./images/logo.jpg" },
         {
-            chat_id: 560729440,
-        },
-        "chat_id = 560729439"
+            caption: menu.photoCaption,
+            parse_mode: "HTML",
+            ...Markup.keyboard(menuBtns).oneTime().resize(),
+        }
     );
-    console.log(await orm.selectAll("admins"));
-})();
+});
 
 if (process.env.NODE_ENV === "production") {
     const { PORT, baseUrl, secretPath } = production;
