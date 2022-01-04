@@ -10,4 +10,5 @@ module.exports = {
         ["📩 Taklif", "👥 Bizga qo'shiling"],
         ["🔒 Admin"],
     ],
+    communityBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
 };
