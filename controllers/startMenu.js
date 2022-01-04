@@ -1,6 +1,6 @@
 const { Markup } = require("telegraf");
 const { menuBtns, adminMenu } = require("../configs/keyboards");
-const { menu } = require("../configs/texts");
+const { start } = require("../configs/texts");
 const model = require("../models/users");
 const { admins } = require("../configs/keys");
 
@@ -17,12 +17,13 @@ module.exports = async (context) => {
             page: "start",
             role: checkAdmin ? "admin" : "user",
         });
-    }
+    } else await model.defaultPage(id);
+
     const keyboard = !checkAdmin ? menuBtns : adminMenu;
     context.replyWithPhoto(
         { source: "./images/logo.jpg" },
         {
-            caption: menu.photoCaption,
+            caption: start,
             parse_mode: "HTML",
             ...Markup.keyboard(keyboard).oneTime().resize(),
         }
