@@ -11,4 +11,10 @@ module.exports = {
         ["🔒 Admin"],
     ],
     communityBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
+    dashboardBtns: [
+        ["📂 Videolar", "📂 Materiallar"],
+        ["📂 Taqdimotlar", "📂 Mashqlar"],
+        ["📩 Takliflar", "📢 Xabar yuborish"],
+        ["📊 Statistika", "🔝 Asosiy Menyu"],
+    ],
 };

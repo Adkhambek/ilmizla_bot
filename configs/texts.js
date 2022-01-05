@@ -6,4 +6,5 @@ module.exports = {
 <b>Youtube:</b> http://bit.ly/ilmizla_uz
 <b>Instagram:</b>
 <b>Github:</b> https://github.com/Adkhambek`,
+    dashboardTxt: "Admin panelga hush kelibsiz",
 };
