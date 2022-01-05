@@ -57,7 +57,9 @@ CREATE TABLE presentations (
 CREATE TABLE feedbacks (
     chat_id int,
     username varchar(200),
-    feedbacks text
+    message text,
+    date timestamptz default current_timestamp,
+    status int default 0
 );
 
 
