@@ -6,6 +6,6 @@ const { admins } = require("../configs/keys");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
-    await model.setPage(chatId, "main/dashboard");
+    await model.setPage(chatId, "menu/dashboard");
     context.reply(dashboardTxt, Markup.keyboard(dashboardBtns).resize());
 };

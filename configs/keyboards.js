@@ -12,9 +12,13 @@ module.exports = {
     ],
     communityBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
     dashboardBtns: [
+        ["🗂 Bo'limlar", "📊 Statistika"],
+        ["📩 Takliflar", "📢 Xabar yuborish"],
+        ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+    ],
+    sectionBtns: [
         ["📂 Videolar", "📂 Materiallar"],
         ["📂 Taqdimotlar", "📂 Mashqlar"],
-        ["📩 Takliflar", "📢 Xabar yuborish"],
-        ["📊 Statistika", "🔝 Asosiy Menyu"],
     ],
+    feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
 };

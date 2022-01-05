@@ -7,4 +7,6 @@ module.exports = {
 <b>Instagram:</b>
 <b>Github:</b> https://github.com/Adkhambek`,
     dashboardTxt: "Admin panelga hush kelibsiz",
+    feedbackTxt:
+        "Botimiz haqida qandaydir fikr yoki takliflaringiz bo'lsa shu yerda yozib qoldirishingiz mumkin.",
 };
