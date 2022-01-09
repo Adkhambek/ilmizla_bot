@@ -10,7 +10,7 @@ module.exports = {
         ["📩 Taklif", "👥 Bizga qo'shiling"],
         ["🔒 Admin"],
     ],
-    communityBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
+    backBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
     dashboardBtns: [
         ["🗂 Bo'limlar", "📊 Statistika"],
         ["📩 Takliflar", "📢 Xabar yuborish"],

@@ -16,6 +16,14 @@ const orm = {
         `;
         return fetch(sql);
     },
+    selectMany: function (table, condition, columns = []) {
+        const sql = `
+        SELECT ${columns.length ? columns.join(", ") : "*"}
+        FROM ${table}
+        WHERE ${condition}
+        `;
+        return fetchAll(sql);
+    },
     insertOne: function (table, data, returningColumn) {
         const columns = Object.keys(data);
         const values = Object.values(data);
@@ -52,10 +60,10 @@ const orm = {
     },
     deleteOne: function (table, condition) {
         const sql = `
-        DELETE ${table}
+        DELETE FROM ${table}
         WHERE ${condition};
         `;
-        return fetch(sql, values);
+        return fetch(sql);
     },
 };
 

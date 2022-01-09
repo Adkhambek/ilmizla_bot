@@ -1,22 +1,29 @@
-const { feedbackTxt } = require("../configs/texts");
+const {
+    feedback: { accept, empty, done },
+} = require("../configs/texts");
 const userModel = require("../models/users");
 const feedbackModel = require("../models/feedbacks");
+const backwards = require("./backwards");
+const mainMenu = require("./mainMenu");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
-    let session = context.session;
     let message = context.message.text;
     const { page } = await userModel.getPage(chatId);
     switch (page) {
         case "menu/feedback":
-            session = { message };
-            switch (session.message) {
-                case "📩 Taklif":
-                case "🚫 Bekor qilish":
-                    delete session.message;
-                    break;
+            switch (message) {
                 case "✅ Yuborish":
-                    console.log(await feedbackModel.getFeedback(chatId));
+                    const checkFeed = await feedbackModel.getAcceptedFeedbacks(
+                        chatId
+                    );
+                    if (!checkFeed) return context.reply(empty);
+                    await feedbackModel.sendFeedback(chatId);
+                    mainMenu(context, done);
+                    break;
+                case "🚫 Bekor qilish":
+                    await feedbackModel.deleteFeedback(chatId);
+                    backwards(context);
                     break;
                 default:
                     await feedbackModel.insertFeedback({
@@ -24,8 +31,7 @@ module.exports = async (context) => {
                         username: context.chat.username,
                         message,
                     });
-                    delete session.message;
-                    context.reply("Yuborildi");
+                    context.reply(accept, { parse_mode: "HTML" });
                     break;
             }
     }

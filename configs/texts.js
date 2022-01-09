@@ -7,6 +7,18 @@ module.exports = {
 <b>Instagram:</b>
 <b>Github:</b> https://github.com/Adkhambek`,
     dashboardTxt: "Admin panelga hush kelibsiz",
-    feedbackTxt:
-        "Botimiz haqida qandaydir fikr yoki takliflaringiz bo'lsa shu yerda yozib qoldirishingiz mumkin.",
+    feedback: {
+        main: "Botimiz haqida qandaydir fikr yoki takliflaringiz bo'lsa shu yerda yozib qoldirishingiz mumkin.",
+        accept: `✔️ Sizning xabaringiz qabul qilindi.\n
+Qo'shimcha xabar kiriting yoki <b>✅ Yuborish</b> tugmasini bosing.\n
+Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing.`,
+        empty: `⚠️ Kamida bitta xabar yuborishingiz kerak.\n
+🔄 Qayta urinib ko'ring`,
+        done: `📬 Xabaringiz muvaffaqiyatli yuborildi.`,
+        detail: (date, message, username) => `📆 <i>${date}</i>
+--------------------------------\n
+<b>${message}</b>\n
+--------------------------------
+👤 @${username}`,
+    },
 };
