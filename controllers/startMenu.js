@@ -25,7 +25,7 @@ module.exports = async (context) => {
         {
             caption: start,
             parse_mode: "HTML",
-            ...Markup.keyboard(keyboard).oneTime().resize(),
+            ...Markup.keyboard(keyboard).resize(),
         }
     );
 };

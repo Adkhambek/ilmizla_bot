@@ -19,7 +19,7 @@ CREATE TABLE users (
     first_name varchar(200),
     last_name varchar(200),
     username varchar(200),
-    page varchar(20),
+    page varchar(50),
     role user_role,
     joinedat timestamptz default current_timestamp
 );
@@ -55,6 +55,7 @@ CREATE TABLE presentations (
 );
 
 CREATE TABLE feedbacks (
+    id serial primary key,
     chat_id int,
     username varchar(200),
     message text,

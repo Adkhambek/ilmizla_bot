@@ -9,6 +9,13 @@ exports.sendFeedback = (chat_id) =>
     );
 exports.deleteFeedback = (chat_id) =>
     orm.deleteOne("feedbacks", `chat_id = ${chat_id} AND status = 0`);
-exports.getFeedbacks = () => orm.selectMany("feedbacks", `status = 1`);
+exports.getFeedbacks = () =>
+    orm.selectMany("feedbacks", `status = 1`, [
+        "id",
+        "chat_id",
+        "username",
+        "message",
+        `to_char("date", 'DD/MM/YYYY HH24:MI') as date`,
+    ]);
 exports.getAcceptedFeedbacks = (chat_id) =>
     orm.selectOne("feedbacks", `chat_id = ${chat_id} AND status = 0`);

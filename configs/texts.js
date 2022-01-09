@@ -15,5 +15,10 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
         empty: `⚠️ Kamida bitta xabar yuborishingiz kerak.\n
 🔄 Qayta urinib ko'ring`,
         done: `📬 Xabaringiz muvaffaqiyatli yuborildi.`,
+        detail: (date, message, username) => `📆 <i>${date}</i>
+--------------------------------\n
+<b>${message}</b>\n
+--------------------------------
+👤 @${username}`,
     },
 };

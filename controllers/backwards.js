@@ -1,5 +1,6 @@
 const model = require("../models/users");
 const mainMenu = require("./mainMenu");
+const dashboard = require("./dashboard");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
@@ -9,7 +10,10 @@ module.exports = async (context) => {
     breadcrumb = breadcrumb.join("/");
     switch (breadcrumb) {
         case "menu":
-            return mainMenu(context);
+            mainMenu(context);
+            break;
+        case "menu/dashboard":
+            dashboard(context);
             break;
     }
 };

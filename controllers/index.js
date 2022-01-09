@@ -5,6 +5,8 @@ const feedback = require("./feedback");
 const backwards = require("./backwards");
 const dashboard = require("./dashboard");
 const inputText = require("./inputText");
+const feedbacks = require("./feedbacks");
+const inlineQuery = require("./inlineQuery");
 
 module.exports = {
     startMenu,
@@ -14,4 +16,6 @@ module.exports = {
     backwards,
     dashboard,
     inputText,
+    feedbacks,
+    inlineQuery,
 };

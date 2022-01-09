@@ -1,5 +1,5 @@
 const { Markup } = require("telegraf");
-const { communityBtns } = require("../configs/keyboards");
+const { backBtns } = require("../configs/keyboards");
 const { communityTxt } = require("../configs/texts");
 const model = require("../models/users");
 
@@ -9,6 +9,6 @@ module.exports = async (context) => {
     context.reply(communityTxt, {
         parse_mode: "HTML",
         disable_web_page_preview: true,
-        ...Markup.keyboard(communityBtns).resize(),
+        ...Markup.keyboard(backBtns).resize(),
     });
 };
