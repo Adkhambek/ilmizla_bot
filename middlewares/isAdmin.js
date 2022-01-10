@@ -5,10 +5,10 @@ module.exports = async (context, next) => {
     try {
         const btn = context.message.text;
         const adminBtns = [
-            "🗂 Bo'limlar",
             "📊 Statistika",
             "📩 Takliflar",
             "📢 Xabar yuborish",
+            "🗂 Playlist",
         ];
 
         if (adminBtns.includes(btn)) {

@@ -12,7 +12,7 @@ exports.deleteInActiveFeedbacks = (chat_id) =>
 exports.deleteFeedback = (feedbackId) =>
     orm.deleteOne("feedbacks", `id = ${feedbackId}`);
 exports.getFeedbacks = () =>
-    orm.selectMany("feedbacks", `status = 1`, [
+    orm.selectMany("feedbacks", `status = 1 ORDER BY id`, [
         "id",
         "chat_id",
         "username",

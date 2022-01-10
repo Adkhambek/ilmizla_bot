@@ -29,5 +29,3 @@ module.exports = async (context) => {
         });
     }
 };
-
-// Markup.button.callback("📬 Send Message", "send")

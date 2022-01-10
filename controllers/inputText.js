@@ -34,5 +34,6 @@ module.exports = async (context) => {
                     context.reply(accept, { parse_mode: "HTML" });
                     break;
             }
+            break;
     }
 };

@@ -6,6 +6,7 @@ const backwards = require("./backwards");
 const dashboard = require("./dashboard");
 const inputText = require("./inputText");
 const feedbacks = require("./feedbacks");
+const playlist = require("./playlist");
 const callbackQuery = require("./callbackQuery");
 
 module.exports = {
@@ -18,4 +19,5 @@ module.exports = {
     inputText,
     feedbacks,
     callbackQuery,
+    playlist,
 };
