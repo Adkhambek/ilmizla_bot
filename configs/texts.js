@@ -22,6 +22,9 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
 👤 @${username}`,
     },
     playlist: {
-        admin: "Quydagi amallardan birini tanlang 👇",
+        admin: {
+            main: "Quydagi amallardan birini tanlang 👇",
+            add: "Yangi playlist nomini kiriting:",
+        },
     },
 };

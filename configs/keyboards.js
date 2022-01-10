@@ -14,10 +14,12 @@ module.exports = {
         ["📩 Takliflar", "📢 Xabar yuborish"],
         ["📊 Statistika", "🔝 Asosiy Menyu"],
     ],
-    playlistBtn: [
-        ["➕ Playlist qo'shish", "✖️ Playlist o'chirish"],
-        ["📝 Playlist o'zgartirish"],
-        ["🔙 Orqaga", "🔝 Asosiy Menyu"],
-    ],
+    playlistBtns: {
+        admin: [
+            ["➕ Playlist qo'shish", "✖️ Playlist o'chirish"],
+            ["📝 Playlist o'zgartirish"],
+            ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+        ],
+    },
     feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
 };

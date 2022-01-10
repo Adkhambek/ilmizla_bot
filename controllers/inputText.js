@@ -35,5 +35,8 @@ module.exports = async (context) => {
                     break;
             }
             break;
+        case "menu/dashboard/playlist/add":
+            context.scene.enter("PLATLIST_SCENE");
+            break;
     }
 };

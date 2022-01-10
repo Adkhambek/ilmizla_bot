@@ -1,6 +1,7 @@
 const model = require("../models/users");
 const mainMenu = require("./mainMenu");
 const dashboard = require("./dashboard");
+const playlist = require("./playlist");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
@@ -14,6 +15,9 @@ module.exports = async (context) => {
             break;
         case "menu/dashboard":
             dashboard(context);
+            break;
+        case "menu/dashboard/playlist":
+            playlist(context);
             break;
     }
 };
