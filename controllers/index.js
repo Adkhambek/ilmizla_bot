@@ -6,7 +6,9 @@ const backwards = require("./backwards");
 const dashboard = require("./dashboard");
 const inputText = require("./inputText");
 const feedbacks = require("./feedbacks");
-const inlineQuery = require("./inlineQuery");
+const playlist = require("./playlist");
+const playlistAdd = require("./playlistAdd");
+const callbackQuery = require("./callbackQuery");
 
 module.exports = {
     startMenu,
@@ -17,5 +19,7 @@ module.exports = {
     dashboard,
     inputText,
     feedbacks,
-    inlineQuery,
+    callbackQuery,
+    playlist,
+    playlistAdd,
 };

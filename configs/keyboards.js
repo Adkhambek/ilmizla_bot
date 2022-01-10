@@ -1,24 +1,25 @@
 module.exports = {
     menuBtns: [
-        ["🎬 Videolar", "📁 Dars materiallari"],
-        ["🗂 Dars taqdimotlari", "📚 Mashqlar"],
-        ["📩 Taklif", "👥 Bizga qo'shiling"],
+        ["🎬 Videolar", "📚 Mashqlar"],
+        ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
     ],
     adminMenu: [
-        ["🎬 Videolar", "📁 Dars materiallari"],
-        ["🗂 Dars taqdimotlari", "📚 Mashqlar"],
-        ["📩 Taklif", "👥 Bizga qo'shiling"],
+        ["🎬 Videolar", "📚 Mashqlar"],
+        ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
         ["🔒 Admin"],
     ],
     backBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
     dashboardBtns: [
-        ["🗂 Bo'limlar", "📊 Statistika"],
+        ["🎬 Video", "🗂 Playlist"],
         ["📩 Takliflar", "📢 Xabar yuborish"],
-        ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+        ["📊 Statistika", "🔝 Asosiy Menyu"],
     ],
-    sectionBtns: [
-        ["📂 Videolar", "📂 Materiallar"],
-        ["📂 Taqdimotlar", "📂 Mashqlar"],
-    ],
+    playlistBtns: {
+        admin: [
+            ["➕ Playlist qo'shish", "✖️ Playlist o'chirish"],
+            ["📝 Playlist o'zgartirish"],
+            ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+        ],
+    },
     feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
 };

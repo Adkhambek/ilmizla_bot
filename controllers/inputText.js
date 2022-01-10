@@ -22,7 +22,7 @@ module.exports = async (context) => {
                     mainMenu(context, done);
                     break;
                 case "🚫 Bekor qilish":
-                    await feedbackModel.deleteFeedback(chatId);
+                    await feedbackModel.deleteInActiveFeedbacks(chatId);
                     backwards(context);
                     break;
                 default:
@@ -34,5 +34,9 @@ module.exports = async (context) => {
                     context.reply(accept, { parse_mode: "HTML" });
                     break;
             }
+            break;
+        case "menu/dashboard/playlist/add":
+            context.scene.enter("PLATLIST_SCENE");
+            break;
     }
 };

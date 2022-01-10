@@ -26,7 +26,9 @@ CREATE TABLE users (
 
 CREATE TABLE playlists (
     id serial primary key,
-    name varchar(100),
+    name varchar(50),
+    author varchar(50),
+    youtube varchar(250),
     createdat timestamptz default current_timestamp
 );
 
