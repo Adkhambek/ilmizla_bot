@@ -22,7 +22,7 @@ module.exports = async (context) => {
                     mainMenu(context, done);
                     break;
                 case "🚫 Bekor qilish":
-                    await feedbackModel.deleteFeedback(chatId);
+                    await feedbackModel.deleteInActiveFeedbacks(chatId);
                     backwards(context);
                     break;
                 default:

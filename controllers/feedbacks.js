@@ -25,8 +25,9 @@ module.exports = async (context) => {
             disable_web_page_preview: true,
             ...Markup.inlineKeyboard([
                 Markup.button.callback("❌ Delete", `delete-${feedback.id}`),
-                Markup.button.callback("📬 Send Message", "send"),
             ]),
         });
     }
 };
+
+// Markup.button.callback("📬 Send Message", "send")

@@ -7,8 +7,10 @@ exports.sendFeedback = (chat_id) =>
         { status: 1 },
         `chat_id = ${chat_id} AND status = 0`
     );
-exports.deleteFeedback = (chat_id) =>
+exports.deleteInActiveFeedbacks = (chat_id) =>
     orm.deleteOne("feedbacks", `chat_id = ${chat_id} AND status = 0`);
+exports.deleteFeedback = (feedbackId) =>
+    orm.deleteOne("feedbacks", `id = ${feedbackId}`);
 exports.getFeedbacks = () =>
     orm.selectMany("feedbacks", `status = 1`, [
         "id",
