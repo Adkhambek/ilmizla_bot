@@ -23,6 +23,7 @@ bot.hears("📩 Takliflar", (ctx) => controller.feedbacks(ctx));
 bot.hears("🗂 Playlist", (ctx) => controller.playlist(ctx));
 bot.hears("➕ Playlist qo'shish", (ctx) => controller.playlistAdd(ctx));
 bot.hears("✖️ Playlist o'chirish", (ctx) => controller.playlistRemove(ctx));
+bot.hears("📝 Playlist o'zgartirish", (ctx) => controller.playlistEdit(ctx));
 
 bot.on("callback_query", (ctx) => controller.callbackQuery(ctx));
 bot.on("text", (ctx) => controller.inputText(ctx));

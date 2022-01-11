@@ -26,6 +26,7 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
             main: "Quydagi amallardan birini tanlang 👇",
             add: "Yangi playlist nomini kiriting:",
             remove: "Kerak bo'lmagan playlistni o'chirishingiz mumkin 👇",
+            edit: "O'zgartirmoqchi bo'lga playlistingizni tanlang 👇",
         },
     },
 };
