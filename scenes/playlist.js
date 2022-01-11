@@ -1,5 +1,6 @@
-const { Scenes } = require("telegraf");
+const { Markup, Scenes } = require("telegraf");
 const model = require("../models/playlist");
+const { playlistBtns } = require("../configs/keyboards");
 
 module.exports = new Scenes.WizardScene(
     "PLATLIST_SCENE",
@@ -16,7 +17,10 @@ module.exports = new Scenes.WizardScene(
     async (ctx) => {
         ctx.wizard.state.youtube = ctx.update.message.text;
         await model.insertPlaylist(ctx.wizard.state);
-        ctx.reply("End");
+        ctx.reply(`<b>${ctx.wizard.state.name}</b> playlisti qo'shildi.`, {
+            parse_mode: "HTML",
+            ...Markup.keyboard(playlistBtns.admin).resize(),
+        });
         console.log(await model.getPlaylists());
         return ctx.scene.leave();
     }
