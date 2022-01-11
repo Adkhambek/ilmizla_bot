@@ -12,7 +12,7 @@ const orm = {
         const sql = `
         SELECT ${columns.length ? columns.join(", ") : "*"}
         FROM ${table}
-        WHERE ${condition}
+        WHERE ${condition};
         `;
         return fetch(sql);
     },
@@ -21,6 +21,15 @@ const orm = {
         SELECT ${columns.length ? columns.join(", ") : "*"}
         FROM ${table}
         WHERE ${condition}
+        `;
+        return fetchAll(sql);
+    },
+    selectSome: function (table, order, options, columns = []) {
+        const sql = `
+        SELECT ${columns.length ? columns.join(", ") : "*"}
+        FROM ${table}
+        ORDER BY ${order}
+        ${options};
         `;
         return fetchAll(sql);
     },

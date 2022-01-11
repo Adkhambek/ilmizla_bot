@@ -8,6 +8,8 @@ const inputText = require("./inputText");
 const feedbacks = require("./feedbacks");
 const playlist = require("./playlist");
 const playlistAdd = require("./playlistAdd");
+const playlistRemove = require("./playlistRemove");
+const playlistEdit = require("./playlistEdit");
 const callbackQuery = require("./callbackQuery");
 
 module.exports = {
@@ -22,4 +24,6 @@ module.exports = {
     callbackQuery,
     playlist,
     playlistAdd,
+    playlistRemove,
+    playlistEdit,
 };

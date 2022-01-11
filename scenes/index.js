@@ -1,6 +1,5 @@
 const { Scenes } = require("telegraf");
-const PLATLIST_SCENE = require("./playlist");
-
-const stage = new Scenes.Stage([PLATLIST_SCENE]);
+const { playlistAdd, playlistEdit } = require("./playlist");
+const stage = new Scenes.Stage([playlistAdd, playlistEdit]);
 
 module.exports = stage;
