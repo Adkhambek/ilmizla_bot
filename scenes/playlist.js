@@ -21,7 +21,6 @@ module.exports = new Scenes.WizardScene(
             parse_mode: "HTML",
             ...Markup.keyboard(playlistBtns.admin).resize(),
         });
-        console.log(await model.getPlaylists());
         return ctx.scene.leave();
     }
 );
