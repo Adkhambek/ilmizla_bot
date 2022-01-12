@@ -11,3 +11,5 @@ exports.pagination = (offset, limit) =>
         "name",
     ]);
 exports.playlistNum = () => orm.selectAll("playlists", ["count(*) as total"]);
+exports.updatePlaylist = (data, playlistName) =>
+    orm.updateOne("playlists", data, `name = '${playlistName}'`);
