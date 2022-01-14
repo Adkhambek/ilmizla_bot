@@ -29,4 +29,5 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
             edit: "O'zgartirmoqchi bo'lga playlistingizni tanlang 👇",
         },
     },
+    broadcast: "Xabaringizni kiriting 👇",
 };

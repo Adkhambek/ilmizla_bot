@@ -41,5 +41,8 @@ module.exports = async (context) => {
         case "menu/dashboard/playlist/edit":
             context.scene.enter("PLAYLIST_EDIT_SCENE");
             break;
+        case "menu/dashboard/broadcast":
+            context.scene.enter("BROADCAST");
+            break;
     }
 };
