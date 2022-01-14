@@ -10,6 +10,7 @@ const playlist = require("./playlist");
 const playlistAdd = require("./playlistAdd");
 const playlistRemove = require("./playlistRemove");
 const playlistEdit = require("./playlistEdit");
+const broadcast = require("./broadcast");
 const callbackQuery = require("./callbackQuery");
 
 module.exports = {
@@ -26,4 +27,5 @@ module.exports = {
     playlistAdd,
     playlistRemove,
     playlistEdit,
+    broadcast,
 };

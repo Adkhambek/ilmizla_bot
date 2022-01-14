@@ -2,6 +2,7 @@ const model = require("../models/users");
 const mainMenu = require("./mainMenu");
 const dashboard = require("./dashboard");
 const playlist = require("./playlist");
+const playlistEdit = require("./playlistEdit");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
