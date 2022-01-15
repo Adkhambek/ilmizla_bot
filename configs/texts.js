@@ -35,4 +35,12 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
     statisticsTxt: (total) => `<b>🧑‍💻 Jami obunachilar:</b>  ${total} ta
     
 📊  ${botUsername} statistikasi`,
+    video: {
+        admin: {
+            main: "Quydagi amallardan birini tanlang 👇",
+            add: "Videoni kiriting:",
+            remove: "Kerak bo'lmagan videoni o'chirishingiz mumkin 👇",
+            edit: "O'zgartirmoqchi bo'lga videoingizni tanlang 👇",
+        },
+    },
 };

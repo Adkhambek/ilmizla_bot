@@ -22,4 +22,11 @@ module.exports = {
         ],
     },
     feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
+    videoBtns: {
+        admin: [
+            ["➕ Video qo'shish", "✖️ Video o'chirish"],
+            ["📝 Video o'zgartirish"],
+            ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+        ],
+    },
 };
