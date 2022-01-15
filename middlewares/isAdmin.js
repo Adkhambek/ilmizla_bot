@@ -19,6 +19,7 @@ module.exports = async (context, next) => {
             await next();
         }
     } catch (error) {
+        console.log(error);
         await next();
     }
 };
