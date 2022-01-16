@@ -27,7 +27,7 @@ bot.hears("📝 Playlist o'zgartirish", (ctx) => controller.playlistEdit(ctx));
 bot.hears("📢 Xabar yuborish", (ctx) => controller.broadcast(ctx));
 bot.hears("📊 Statistika", (ctx) => controller.statistics(ctx));
 bot.hears("🎬 Video", (ctx) => controller.video(ctx));
-bot.hears("➕ Video qo'shish", (ctx) => controller.playlistAdd(ctx));
+bot.hears("➕ Video qo'shish", (ctx) => controller.videoAdd(ctx));
 
 bot.on("callback_query", (ctx) => controller.callbackQuery(ctx));
 bot.on("text", (ctx) => controller.inputText(ctx));

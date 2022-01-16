@@ -38,7 +38,7 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
     video: {
         admin: {
             main: "Quydagi amallardan birini tanlang 👇",
-            add: "Videoni kiriting:",
+            add: "Qaysi playlistga qo'shmoqchisiz:",
             remove: "Kerak bo'lmagan videoni o'chirishingiz mumkin 👇",
             edit: "O'zgartirmoqchi bo'lga videoingizni tanlang 👇",
         },
