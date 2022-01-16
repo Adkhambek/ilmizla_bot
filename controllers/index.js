@@ -12,6 +12,9 @@ const playlistRemove = require("./playlistRemove");
 const playlistEdit = require("./playlistEdit");
 const broadcast = require("./broadcast");
 const callbackQuery = require("./callbackQuery");
+const statistics = require("./statistics");
+const video = require("./video");
+const videoAdd = require("./videoAdd");
 
 module.exports = {
     startMenu,
@@ -28,4 +31,7 @@ module.exports = {
     playlistRemove,
     playlistEdit,
     broadcast,
+    statistics,
+    video,
+    videoAdd,
 };

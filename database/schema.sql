@@ -38,8 +38,8 @@ CREATE TABLE videos (
     file_id varchar(200),
     playlist_id int references playlists(id),
     duration int,
-    description text,
-    createdat timestamptz default current_timestamp
+    createdat timestamptz default current_timestamp,
+    status int default 0
 );
 
 CREATE TABLE resources (

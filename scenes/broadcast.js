@@ -1,6 +1,5 @@
-const { Markup, Scenes } = require("telegraf");
+const { Scenes } = require("telegraf");
 const backwards = require("../controllers/backwards");
-const mainMenu = require("../controllers/mainMenu");
 const userModel = require("../models/users");
 
 module.exports = new Scenes.WizardScene(
@@ -22,21 +21,22 @@ module.exports = new Scenes.WizardScene(
     },
     async (ctx) => {
         if (ctx.update.message.text === "✅ Yuborish") {
-            try {
-                const users = await userModel.allUserIds();
-                for (const user of users) {
-                    ctx.telegram.sendMessage(
-                        user.chat_id,
-                        ctx.wizard.state.message
-                    );
-                }
-                ctx.reply("Xabaringiz muvaffaqiyatli yuborildi");
-                backwards(ctx);
-                return ctx.scene.leave();
-            } catch (err) {
-                ctx.reply("Xabaringiz muvaffaqiyatli yuborildi");
-                backwards(ctx);
-                return ctx.scene.leave();
+            const users = await userModel.allUserIds();
+            for (const user of users) {
+                ctx.telegram
+                    .sendMessage(user.chat_id, ctx.wizard.state.message)
+                    .then(() => {
+                        ctx.reply("Xabaringiz muvaffaqiyatli yuborildi");
+                        backwards(ctx);
+                        return ctx.scene.leave();
+                    })
+                    .catch((err) => {
+                        if (err.response && err.response.statusCode === 403) {
+                            ctx.reply("Xabaringiz muvaffaqiyatli yuborildi");
+                            backwards(ctx);
+                            return ctx.scene.leave();
+                        }
+                    });
             }
         }
         if (ctx.update.message.text === "🚫 Bekor qilish") {

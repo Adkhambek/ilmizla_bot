@@ -2,7 +2,6 @@ const { Markup, Scenes } = require("telegraf");
 const model = require("../models/playlist");
 const { playlistBtns } = require("../configs/keyboards");
 const backwards = require("../controllers/backwards");
-const mainMenu = require("../controllers/mainMenu");
 
 exports.playlistAdd = new Scenes.WizardScene(
     "PLATLIST_SCENE",

@@ -9,4 +9,5 @@ module.exports = {
         secretPath: process.env.SECRET_PATH,
     },
     admins: [Number(process.env.ADMIN_1)],
+    botUsername: process.env.BOT_USERNAME,
 };

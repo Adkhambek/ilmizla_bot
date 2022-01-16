@@ -12,3 +12,4 @@ exports.getPage = (chat_id) =>
     orm.selectOne("users", `chat_id = ${chat_id}`, ["page"]);
 exports.defaultPage = (chat_id) =>
     orm.updateOne("users", { page: "menu" }, `chat_id = ${chat_id}`);
+exports.countUsers = () => orm.selectAll("users", ["count(*) as total"]);
