@@ -1,10 +1,10 @@
 module.exports = {
     menuBtns: [
-        ["🎬 Videolar", "📚 Mashqlar"],
+        ["🎬 Videolar", "📁 Dars fayllari"],
         ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
     ],
     adminMenu: [
-        ["🎬 Videolar", "📚 Mashqlar"],
+        ["🎬 Videolar", "📁 Dars fayllari"],
         ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
         ["🔒 Admin"],
     ],

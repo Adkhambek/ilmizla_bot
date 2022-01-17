@@ -14,6 +14,7 @@ bot.use(isAdmin);
 bot.start((ctx) => controller.startMenu(ctx));
 bot.hears("👥 Bizga qo'shiling", (ctx) => controller.community(ctx));
 bot.hears("📩 Taklif yuborish", (ctx) => controller.feedback(ctx));
+bot.hears("📁 Dars fayllari", (ctx) => controller.resource(ctx));
 bot.hears("🔝 Asosiy Menyu", (ctx) => controller.mainMenu(ctx));
 bot.hears("🔙 Orqaga", (ctx) => controller.backwards(ctx));
 

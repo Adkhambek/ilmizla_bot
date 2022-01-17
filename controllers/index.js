@@ -15,6 +15,7 @@ const callbackQuery = require("./callbackQuery");
 const statistics = require("./statistics");
 const video = require("./video");
 const videoAdd = require("./videoAdd");
+const resource = require("./resource");
 
 module.exports = {
     startMenu,
@@ -34,4 +35,5 @@ module.exports = {
     statistics,
     video,
     videoAdd,
+    resource,
 };
