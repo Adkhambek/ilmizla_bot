@@ -47,5 +47,8 @@ module.exports = async (context) => {
         case "menu/dashboard/video/add":
             context.scene.enter("VIDEO_ADD");
             break;
+        // case "menu/dashboard/video/delete":
+        //     context.scene.enter("VIDEO_DELETE");
+        //     break;
     }
 };

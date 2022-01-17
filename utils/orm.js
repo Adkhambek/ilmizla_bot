@@ -16,6 +16,15 @@ const orm = {
         `;
         return fetch(sql);
     },
+    selectManyWithJoin: function (table, join, condition, columns = []) {
+        const sql = `
+        SELECT ${columns.length ? columns.join(", ") : "*"}
+        FROM ${table}
+        ${join}
+        WHERE ${condition}
+        `;
+        return fetchAll(sql);
+    },
     selectMany: function (table, condition, columns = []) {
         const sql = `
         SELECT ${columns.length ? columns.join(", ") : "*"}

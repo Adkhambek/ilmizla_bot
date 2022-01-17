@@ -50,3 +50,21 @@ exports.videoAdd = new Scenes.WizardScene(
         ctx.reply("Yana video kiritasizmi ?");
     }
 );
+
+exports.videoDelete = new Scenes.WizardScene("VIDEO_DELETE", async (ctx) => {
+    console.log(ctx.update.message.text);
+    const videos = await videoModel.getVideosWithPlaylist(
+        ctx.update.message.text
+    );
+    const arr = [];
+    for (const video of videos) {
+        arr.push([
+            Markup.button.callback(video.name.split(".")[0], "video"),
+            Markup.button.callback("❌", `video-${video.id}`),
+        ]);
+    }
+    ctx.reply(`<b>${ctx.update.message.text}</b> bo'limidagi videolar:`, {
+        parse_mode: "HTML",
+        ...Markup.inlineKeyboard(arr),
+    });
+});
