@@ -15,8 +15,8 @@ exports.getInActiveResources = () => orm.selectMany("resources", "status = 0");
 //         `playlists.name = '${playlist}' AND videos.status = 1 ORDER BY id`,
 //         ["videos.id", "videos.name"]
 //     );
-// exports.getVideos = (playlistId) =>
-//     selectMany("videos", `playlist_id = ${playlistId}`, ["name", "file_id"]);
+exports.getResources = (playlistId) =>
+    orm.selectMany("resources", `playlist_id = ${playlistId}`, ["file_id"]);
 // exports.deleteVideo = (id) => orm.deleteOne("videos", `id = ${id}`);
 // exports.countVideos = (palylistId) =>
 //     orm.selectMany("videos", `playlist_id = ${palylistId}`, [

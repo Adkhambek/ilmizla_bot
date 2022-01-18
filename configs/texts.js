@@ -74,5 +74,8 @@ Iltimos, kiritga habarlaringizni oldin yuboring, yoki 🚫 <b>Bekor qilish</b>  
             remove: "Kerak bo'lmagan fayllarni o'chirishingiz mumkin 👇",
             edit: "O'zgartirmoqchi bo'lga fayl nomini tanlang 👇",
         },
+        public: {
+            main: "Quyidagi bo'limlardan birini tanlang 👇",
+        },
     },
 };

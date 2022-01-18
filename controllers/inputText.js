@@ -61,5 +61,9 @@ module.exports = async (context) => {
             break;
         case "menu/dashboard/resource":
             context.scene.enter("RESOURCE_ADD");
+            break;
+        case "menu/resources":
+            context.scene.enter("RESOURCES");
+            break;
     }
 };

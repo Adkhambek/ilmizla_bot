@@ -62,3 +62,26 @@ exports.resourceAdd = new Scenes.WizardScene(
         return;
     }
 );
+
+exports.resources = new Scenes.WizardScene("RESOURCES", async (ctx) => {
+    const chatId = ctx.chat.id;
+    await userModel.setPage(chatId, "menu/resources/view");
+    const text = ctx.update.message.text;
+    if (text === "🔙 Orqaga") {
+        backwards(ctx);
+        return ctx.scene.leave();
+    } else if (text === "🔝 Asosiy Menyu") {
+        mainMenu(ctx);
+        return ctx.scene.leave();
+    }
+    const { id } = await playlistModel.getPlaylistColumn(text);
+    const resources = await resourceModel.getResources(id);
+    if (!resources.length) {
+        ctx.reply("Ushbu kursga doir fayllar yo'q.");
+        return;
+    }
+    for (resource of resources) {
+        await ctx.replyWithDocument(resource.file_id);
+    }
+    return;
+});

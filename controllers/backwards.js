@@ -5,6 +5,7 @@ const playlist = require("./playlist");
 const video = require("./video");
 const videos = require("./videos");
 const resource = require("./resource");
+const resources = require("./resources");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
@@ -30,6 +31,9 @@ module.exports = async (context) => {
             break;
         case "menu/dashboard/resource":
             resource(context);
+            break;
+        case "menu/resources":
+            resources(context);
             break;
     }
 };
