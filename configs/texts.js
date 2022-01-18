@@ -42,5 +42,18 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
             remove: "Kerak bo'lmagan videoni o'chirishingiz mumkin 👇",
             edit: "O'zgartirmoqchi bo'lga videoingizni tanlang 👇",
         },
+        public: {
+            main: "Quyidagi bo'limlardan birini tanlang 👇",
+            playlist: (
+                courseName,
+                courseAuthor,
+                videoNumber,
+                duration
+            ) => `<b>${"qisqacha".toUpperCase()}</b>\n
+<b>Kurs nomi:</b> ${courseName}
+<b>Kurs muallifi:</b> ${courseAuthor}
+<b>Videolar soni:</b> ${videoNumber}
+<b>Kurs davomiyligi</b> ${duration}`,
+        },
     },
 };

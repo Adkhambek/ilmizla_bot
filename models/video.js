@@ -1,3 +1,4 @@
+const { selectMany } = require("../utils/orm");
 const orm = require("../utils/orm");
 
 exports.uploadVideo = (data) => orm.insertOne("videos", data);
@@ -14,4 +15,14 @@ exports.getVideosWithPlaylist = (playlist) =>
         `playlists.name = '${playlist}' AND videos.status = 1 ORDER BY id`,
         ["videos.id", "videos.name"]
     );
+exports.getVideos = (playlistId) =>
+    selectMany("videos", `playlist_id = ${playlistId}`, ["name", "file_id"]);
 exports.deleteVideo = (id) => orm.deleteOne("videos", `id = ${id}`);
+exports.countVideos = (palylistId) =>
+    orm.selectMany("videos", `playlist_id = ${palylistId}`, [
+        "count(*) as total",
+    ]);
+exports.totalVideoDuration = (palylistId) =>
+    orm.selectMany("videos", `playlist_id = ${palylistId}`, ["SUM(duration)"]);
+exports.pagination = (offset, limit) =>
+    orm.selectSome("videos", "id", `OFFSET ${offset} LIMIT ${limit}`, ["name"]);

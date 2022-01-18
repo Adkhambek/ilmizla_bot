@@ -24,5 +24,9 @@ module.exports = {
     feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
     videoBtns: {
         admin: [["➕ Video qo'shish"], ["🔙 Orqaga", "🔝 Asosiy Menyu"]],
+        public: [
+            ["Bo'lib ko'rish", "Hammasini ko'rish"],
+            ["🔙 Orqaga", "🔝 Asosiy Menyu"],
+        ],
     },
 };
