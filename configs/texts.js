@@ -56,4 +56,15 @@ Xabarlaringizni bekor qilish uchun esa <b>🚫 Bekor qilish</b> tugmasini bosing
 <b>Kurs davomiyligi</b> ${duration}`,
         },
     },
+    error: {
+        notFound: `<b>❌ Noma'lum buyruq!</b>
+
+<i>Siz to'g'ridan-to'g'ri bot chatiga xabar yubordingiz, yoki
+bot tuzilishi yaratuvchisi tomonidan o'zgartirilgan boʻlishi mumkin.</i>
+
+ℹ️ Xabarlarni to'g'ridan-to'g'ri botga yubormang.`,
+        limitMessage: `⚠️ <b>Juda ko'p habar yubordingiz.</b>
+
+Iltimos, kiritga habarlaringizni yuboring, yoki 🚫 <b>Bekor qilish</b>  tugmasini bosing`,
+    },
 };

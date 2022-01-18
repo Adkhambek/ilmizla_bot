@@ -1,4 +1,5 @@
 const {
+    error,
     feedback: { accept, empty, done },
 } = require("../configs/texts");
 const userModel = require("../models/users");
@@ -26,13 +27,21 @@ module.exports = async (context) => {
                     backwards(context);
                     break;
                 default:
-                    await feedbackModel.insertFeedback({
-                        chat_id: chatId,
-                        username: context.chat.username,
-                        message,
-                    });
-                    context.reply(accept, { parse_mode: "HTML" });
-                    break;
+                    const [{ count }] = await feedbackModel.countFeedbacks(
+                        chatId
+                    );
+                    if (+count !== 3) {
+                        await feedbackModel.insertFeedback({
+                            chat_id: chatId,
+                            username: context.chat.username,
+                            message,
+                        });
+                        return context.reply(accept, { parse_mode: "HTML" });
+                    } else {
+                        return context.reply(error.limitMessage, {
+                            parse_mode: "HTML",
+                        });
+                    }
             }
             break;
         case "menu/dashboard/playlist/add":

@@ -7,6 +7,7 @@ const backwards = require("../controllers/backwards");
 const mainMenu = require("../controllers/mainMenu");
 const { convertHMS } = require("../utils/timeConverter");
 const {
+    error,
     video: { public },
 } = require("../configs/texts");
 const { botUsername } = require("../configs/keys");
@@ -62,34 +63,47 @@ exports.videoAdd = new Scenes.WizardScene(
 exports.videos = new Scenes.WizardScene(
     "VIDEOS",
     async (ctx) => {
-        const chatId = ctx.chat.id;
-        await userModel.setPage(chatId, "menu/videos/view");
-        const playlist = await playlistModel.getPlaylistColumn(
-            ctx.update.message.text
-        );
-        ctx.wizard.state.playlistId = playlist.id;
-        const [{ total }] = await videoModel.countVideos(playlist.id);
-        const [{ sum }] = await videoModel.totalVideoDuration(playlist.id);
-        await ctx.reply(
-            public.playlist(
-                playlist.name,
-                playlist.author,
-                total,
-                convertHMS(sum)
-            ),
-            {
-                parse_mode: "HTML",
-                disable_web_page_preview: true,
-                ...Markup.keyboard(videoBtns.public).resize(),
+        try {
+            const chatId = ctx.chat.id;
+            await userModel.setPage(chatId, "menu/videos/view");
+            const text = ctx.update.message.text;
+            if (text === "🔙 Orqaga") {
+                backwards(ctx);
+                return ctx.scene.leave();
+            } else if (text === "🔝 Asosiy Menyu") {
+                mainMenu(ctx);
+                return ctx.scene.leave();
             }
-        );
-        await ctx.reply(
-            "Youtubeda Ko'rish",
-            Markup.inlineKeyboard([
-                Markup.button.url(playlist.name, playlist.youtube),
-            ])
-        );
-        return ctx.wizard.next();
+            const playlist = await playlistModel.getPlaylistColumn(
+                ctx.update.message.text
+            );
+            ctx.wizard.state.playlistId = playlist.id;
+            const [{ total }] = await videoModel.countVideos(playlist.id);
+            const [{ sum }] = await videoModel.totalVideoDuration(playlist.id);
+            await ctx.reply(
+                public.playlist(
+                    playlist.name,
+                    playlist.author,
+                    total,
+                    convertHMS(sum)
+                ),
+                {
+                    parse_mode: "HTML",
+                    disable_web_page_preview: true,
+                    ...Markup.keyboard(videoBtns.public).resize(),
+                }
+            );
+            await ctx.reply(
+                "Youtubeda Ko'rish",
+                Markup.inlineKeyboard([
+                    Markup.button.url(playlist.name, playlist.youtube),
+                ])
+            );
+            return ctx.wizard.next();
+        } catch (err) {
+            ctx.reply(error.notFound, { parse_mode: "HTML" });
+            return;
+        }
     },
     async (ctx) => {
         const playlistId = ctx.wizard.state.playlistId;
@@ -128,30 +142,35 @@ exports.videos = new Scenes.WizardScene(
                 mainMenu(ctx);
                 return ctx.scene.leave();
             default:
-                ctx.reply("Xata jumla kiritingiz");
+                ctx.reply(error.notFound, { parse_mode: "HTML" });
                 return;
         }
     },
     async (ctx) => {
-        const playlistId = ctx.wizard.state.playlistId;
-        const videos = await videoModel.getVideos(playlistId);
-        const text = ctx.update.message.text;
-        if (text.endsWith("dars")) {
-            const num = text.split("-")[0] - 1;
-            ctx.replyWithVideo(videos[num].file_id, {
-                parse_mode: "HTML",
-                caption: `<b>${videos[num].name}</b>\n\n${botUsername}`,
-            });
-            return;
-        }
-        if (text === "🔙 Orqaga") {
-            backwards(ctx);
-            return ctx.scene.leave();
-        } else if (text === "🔝 Asosiy Menyu") {
-            mainMenu(ctx);
-            return ctx.scene.leave();
-        } else {
-            ctx.reply("Xato jumla kiritdingiz");
+        try {
+            const playlistId = ctx.wizard.state.playlistId;
+            const videos = await videoModel.getVideos(playlistId);
+            const text = ctx.update.message.text;
+            if (text.endsWith("dars")) {
+                const num = text.split("-")[0] - 1;
+                ctx.replyWithVideo(videos[num].file_id, {
+                    parse_mode: "HTML",
+                    caption: `<b>${videos[num].name}</b>\n\n${botUsername}`,
+                });
+                return;
+            }
+            if (text === "🔙 Orqaga") {
+                backwards(ctx);
+                return ctx.scene.leave();
+            } else if (text === "🔝 Asosiy Menyu") {
+                mainMenu(ctx);
+                return ctx.scene.leave();
+            } else {
+                ctx.reply(error.notFound, { parse_mode: "HTML" });
+                return;
+            }
+        } catch (err) {
+            ctx.reply(error.notFound, { parse_mode: "HTML" });
             return;
         }
     }

@@ -19,5 +19,9 @@ exports.getFeedbacks = () =>
         "message",
         `to_char("date", 'DD/MM/YYYY HH24:MI') as date`,
     ]);
+exports.countFeedbacks = (chat_id) =>
+    orm.selectMany("feedbacks", `chat_id = ${chat_id} AND status = 0`, [
+        "count(*)",
+    ]);
 exports.getAcceptedFeedbacks = (chat_id) =>
     orm.selectOne("feedbacks", `chat_id = ${chat_id} AND status = 0`);

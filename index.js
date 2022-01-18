@@ -6,6 +6,10 @@ const isAdmin = require("./middlewares/isAdmin");
 const stage = require("./scenes");
 
 // Middleware
+bot.catch((err, ctx) => {
+    console.log(err);
+    return ctx.reply("error");
+});
 bot.use(session());
 bot.use(stage.middleware());
 bot.use(isAdmin);
