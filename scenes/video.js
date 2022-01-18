@@ -51,7 +51,7 @@ exports.videoAdd = new Scenes.WizardScene(
         }
         const { duration, file_name, file_id } = ctx.update.message.video;
         await videoModel.uploadVideo({
-            name: file_name,
+            name: file_name.replace(".mp4", ""),
             file_id,
             playlist_id: ctx.wizard.state.playlistId,
             duration,
