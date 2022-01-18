@@ -3,6 +3,7 @@ const mainMenu = require("./mainMenu");
 const dashboard = require("./dashboard");
 const playlist = require("./playlist");
 const video = require("./video");
+const videos = require("./videos");
 
 module.exports = async (context) => {
     const chatId = context.chat.id;
@@ -22,6 +23,9 @@ module.exports = async (context) => {
             break;
         case "menu/dashboard/video":
             video(context);
+            break;
+        case "menu/videos":
+            videos(context);
             break;
     }
 };

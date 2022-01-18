@@ -1,10 +1,10 @@
 module.exports = {
     menuBtns: [
-        ["🎬 Videolar", "📚 Mashqlar"],
+        ["🎬 Videolar", "📁 Dars fayllari"],
         ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
     ],
     adminMenu: [
-        ["🎬 Videolar", "📚 Mashqlar"],
+        ["🎬 Videolar", "📁 Dars fayllari"],
         ["📩 Taklif yuborish", "👥 Bizga qo'shiling"],
         ["🔒 Admin"],
     ],
@@ -23,9 +23,9 @@ module.exports = {
     },
     feedbackBtns: [["✅ Yuborish"], ["🚫 Bekor qilish"]],
     videoBtns: {
-        admin: [
-            ["➕ Video qo'shish", "✖️ Video o'chirish"],
-            ["📝 Video o'zgartirish"],
+        admin: [["➕ Video qo'shish"], ["🔙 Orqaga", "🔝 Asosiy Menyu"]],
+        public: [
+            ["Bo'lib ko'rish", "Hammasini ko'rish"],
             ["🔙 Orqaga", "🔝 Asosiy Menyu"],
         ],
     },
