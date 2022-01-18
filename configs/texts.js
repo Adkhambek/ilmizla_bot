@@ -6,7 +6,7 @@ module.exports = {
     communityTxt: `<b>Quydagi bizning ijtimoiy tarmoqlarga qoshilishingiz mumkin</b> 👇 \n
 <b>Telegram:</b> https://t.me/ilmizla_uz
 <b>Youtube:</b> http://bit.ly/ilmizla_uz
-<b>Instagram:</b>
+<b>Instagram:</b> https://www.instagram.com/ilmizla_uz/
 <b>Github:</b> https://github.com/Adkhambek`,
     dashboardTxt: "Admin panelga hush kelibsiz",
     feedback: {
