@@ -10,7 +10,7 @@ module.exports = {
     ],
     backBtns: [["🔙 Orqaga"], ["🔝 Asosiy Menyu"]],
     dashboardBtns: [
-        ["🎬 Video", "🗂 Playlist"],
+        ["🎬 Video", "🗂 Playlist", "📁 Resurslar"],
         ["📩 Takliflar", "📢 Xabar yuborish"],
         ["📊 Statistika", "🔝 Asosiy Menyu"],
     ],
@@ -28,5 +28,8 @@ module.exports = {
             ["Bo'lib ko'rish", "Hammasini ko'rish"],
             ["🔙 Orqaga", "🔝 Asosiy Menyu"],
         ],
+    },
+    resourceBtns: {
+        admin: [["➕ fayl qo'shish"], ["🔙 Orqaga", "🔝 Asosiy Menyu"]],
     },
 };
