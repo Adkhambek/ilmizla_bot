@@ -15,6 +15,7 @@ const callbackQuery = require("./callbackQuery");
 const statistics = require("./statistics");
 const videos = require("./videos");
 const videoAdd = require("./videoAdd");
+const resources = require("./resources");
 const resource = require("./resource");
 const video = require("./video");
 
@@ -36,6 +37,7 @@ module.exports = {
     statistics,
     videos,
     videoAdd,
+    resources,
     resource,
     video,
 };

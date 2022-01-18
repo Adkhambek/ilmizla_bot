@@ -65,6 +65,14 @@ bot tuzilishi yaratuvchisi tomonidan o'zgartirilgan boʻlishi mumkin.</i>
 ℹ️ Xabarlarni to'g'ridan-to'g'ri botga yubormang.`,
         limitMessage: `⚠️ <b>Juda ko'p habar yubordingiz.</b>
 
-Iltimos, kiritga habarlaringizni yuboring, yoki 🚫 <b>Bekor qilish</b>  tugmasini bosing`,
+Iltimos, kiritga habarlaringizni oldin yuboring, yoki 🚫 <b>Bekor qilish</b>  tugmasini bosing`,
+    },
+    resource: {
+        admin: {
+            main: "Quydagi amallardan birini tanlang 👇",
+            add: "Qaysi kursga qo'shmoqchisiz:",
+            remove: "Kerak bo'lmagan fayllarni o'chirishingiz mumkin 👇",
+            edit: "O'zgartirmoqchi bo'lga fayl nomini tanlang 👇",
+        },
     },
 };

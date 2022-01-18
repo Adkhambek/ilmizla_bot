@@ -46,7 +46,8 @@ CREATE TABLE resources (
     id serial primary key,
     playlist_id int references playlists(id),
     file_id varchar(200),
-    createdat timestamptz default current_timestamp
+    createdat timestamptz default current_timestamp,
+    status int default 0
 );
 
 CREATE TABLE presentations (

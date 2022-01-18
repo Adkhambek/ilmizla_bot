@@ -4,12 +4,13 @@ const bot = new Telegraf(TOKEN);
 const controller = require("./controllers");
 const isAdmin = require("./middlewares/isAdmin");
 const stage = require("./scenes");
+const { error } = require("./configs/texts");
 
-// Middleware
+// Error Handling
 bot.catch((err, ctx) => {
-    console.log(err);
-    return ctx.reply("error");
+    return ctx.reply(error.notFound, { parse_mode: "HTML" });
 });
+// Middleware
 bot.use(session());
 bot.use(stage.middleware());
 bot.use(isAdmin);
@@ -18,7 +19,7 @@ bot.use(isAdmin);
 bot.start((ctx) => controller.startMenu(ctx));
 bot.hears("👥 Bizga qo'shiling", (ctx) => controller.community(ctx));
 bot.hears("📩 Taklif yuborish", (ctx) => controller.feedback(ctx));
-bot.hears("📁 Dars fayllari", (ctx) => controller.resource(ctx));
+bot.hears("📁 Dars fayllari", (ctx) => controller.resources(ctx));
 bot.hears("🎬 Videolar", (ctx) => controller.videos(ctx));
 bot.hears("🔝 Asosiy Menyu", (ctx) => controller.mainMenu(ctx));
 bot.hears("🔙 Orqaga", (ctx) => controller.backwards(ctx));
@@ -34,6 +35,7 @@ bot.hears("📢 Xabar yuborish", (ctx) => controller.broadcast(ctx));
 bot.hears("📊 Statistika", (ctx) => controller.statistics(ctx));
 bot.hears("🎬 Video", (ctx) => controller.video(ctx));
 bot.hears("➕ Video qo'shish", (ctx) => controller.videoAdd(ctx));
+bot.hears("📁 Resurslar", (ctx) => controller.resource(ctx));
 
 bot.on("callback_query", (ctx) => controller.callbackQuery(ctx));
 bot.on("text", (ctx) => controller.inputText(ctx));
