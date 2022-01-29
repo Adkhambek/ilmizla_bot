@@ -50,13 +50,6 @@ CREATE TABLE resources (
     status int default 0
 );
 
-CREATE TABLE presentations (
-    id serial primary key,
-    playlist_id int references playlists(id),
-    file_id varchar(200),
-    createdat timestamptz default current_timestamp
-);
-
 CREATE TABLE feedbacks (
     id serial primary key,
     chat_id int,

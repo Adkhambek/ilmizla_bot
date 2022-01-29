@@ -2,11 +2,11 @@
 
 ## Description
 
-Bot for my [youtube channel](https://www.youtube.com/channel/UCX_HJo3h89sbrrcyQektvBg);
+Bot for my [youtube channel](https://www.youtube.com/channel/UCX_HJo3h89sbrrcyQektvBg)
 
 ## Demo
 
-Live Demo: [@jsonMessage_bot](https://t.me/jsonMessage_bot)
+Live Demo: [@ilmizlauz_bot](https://t.me/ilmizlauz_bot)
 
 ## Install
 
