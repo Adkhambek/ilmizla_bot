@@ -16,7 +16,7 @@ exports.getVideosWithPlaylist = (playlist) =>
         ["videos.id", "videos.name"]
     );
 exports.getVideos = (playlistId) =>
-    selectMany("videos", `playlist_id = ${playlistId}`, ["name", "file_id"]);
+    selectMany("videos", `playlist_id = ${playlistId} ORDER BY id`, ["name", "file_id"]);
 exports.deleteVideo = (id) => orm.deleteOne("videos", `id = ${id}`);
 exports.countVideos = (palylistId) =>
     orm.selectMany("videos", `playlist_id = ${palylistId}`, [
